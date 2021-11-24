@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>gfx/background.png</file>
+        <file>gfx/bar.png</file>
+        <file>gfx/Classic.jpeg</file>
+        <file>gfx/cover.png</file>
+        <file>gfx/cover_frame.png</file>
+        <file>gfx/cover_overlay.png</file>
+        <file>gfx/slider_background.png</file>
+        <file>gfx/slider_knob.png</file>
+        <file>gfx/slider_value_left.png</file>
+        <file>gfx/slider_value_right.png</file>
+        <file>fonts/OpenSans-Bold.ttf</file>
+        <file>fonts/OpenSans-BoldItalic.ttf</file>
+        <file>fonts/OpenSans-ExtraBold.ttf</file>
+        <file>fonts/OpenSans-ExtraBoldItalic.ttf</file>
+        <file>fonts/OpenSans-Italic.ttf</file>
+        <file>fonts/OpenSans-Light.ttf</file>
+        <file>fonts/OpenSans-LightItalic.ttf</file>
+        <file>fonts/OpenSans-Regular.ttf</file>
+        <file>fonts/OpenSans-Semibold.ttf</file>
+        <file>fonts/OpenSans-SemiboldItalic.ttf</file>
+        <file>icons/forward.png</file>
+        <file>icons/pause.png</file>
+        <file>icons/play.png</file>
+        <file>icons/rewind.png</file>
+        <file>icons/share.png</file>
+    </qresource>
+</RCC>
