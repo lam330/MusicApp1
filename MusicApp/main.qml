@@ -89,11 +89,13 @@ ApplicationWindow {
             text: "Find"
             onClicked: {
                 //Send input to C++
-                //QmlCaller.cppMethod(textFieldId.text)
-                dynamic.getQmlValue(textFieldId.text)
+                myAudioModel.getQmlValue(textFieldId.text)
+                //Reset model
+                myAudioModel.resetQmlModel()
 
-                dynamic.resetQmlModel()
-                listSongId.model = dynamic
+
+//                dynamic.resetQmlModel()
+//                listSongId.model = dynamic
 
             }
         }
@@ -202,7 +204,7 @@ ApplicationWindow {
             id: removeButton
             text: "Remove"
             onClicked: {
-                playLogic.myAudioModel.remove(listSongId.currentIndex);
+                myAudioModel.removeFile(listSongId.currentIndex);
                 listSongId.currentIndex --;
             }
         }
@@ -254,12 +256,9 @@ ApplicationWindow {
             console.log("current i in setIndex: " + i)
             index = i;
 
-            if (index === -1)
+            if (index < 0)
             {
-                //index = items.count;
-                index = myAudioModel.count()
-                listSongId.currentIndex = index
-                //mediaPlayer.source = "";
+                listSongId.currentIndex = myAudioModel.count() - 1
             } else if (index > myAudioModel.count()) {
                 listSongId.currentIndex = 0
             }else{
@@ -271,6 +270,11 @@ ApplicationWindow {
 
         function next(){
             listSongId.currentIndex += 1
+            //go to the first
+            if(listSongId.currentIndex > myAudioModel.count() - 1) {
+                listSongId.currentIndex = 0
+            }
+
             console.log("Current index in next " + listSongId.currentIndex)
             //if(listSongId.currentIndex)
             setIndex(listSongId.currentIndex);
@@ -278,8 +282,12 @@ ApplicationWindow {
 
         function previous(){
             listSongId.currentIndex -= 1
-            console.log("Current index in pre " + listSongId.currentIndex)
-            //console.log("Current index" + listSongId.currentIndex)
+            //go to the last
+            if(listSongId.currentIndex < 0) {
+                listSongId.currentIndex = myAudioModel.count() - 1
+            }
+
+            console.log("Current index in pre " + listSongId.currentIndex)        
             setIndex(listSongId.currentIndex);
         }
 
@@ -324,7 +332,7 @@ ApplicationWindow {
     FontLoader {
         id: appFont
         name: "OpenSans-Regular"
-        source: "fonts/OpenSans-Regular.ttf"
+        source: "qrc:/fonts/OpenSans-Regular.ttf"
     }
 
     Image {
@@ -489,7 +497,7 @@ ApplicationWindow {
                                 Text {
                                     id: trackTitle
                                     text: myAudioModel.getName(listSongId.currentIndex)
-                                    //text: listSongId.currentIndex.model.fileName
+                                    //text: listSongId.model.fileName
                                     color: "#eeeeee"
                                     font.family: appFont.name
                                     font.pointSize: 17

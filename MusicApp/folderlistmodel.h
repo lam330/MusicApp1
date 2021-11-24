@@ -20,7 +20,9 @@ public:
     //FolderListModel();
     ~FolderListModel();
 
-    void loadData(const QString &path);
+    void loadData();
+    void loadFoundListData();
+
 
     //Read from QMl
     int rowCount(const QModelIndex &parent = QModelIndex()) const;
@@ -43,14 +45,16 @@ public slots:
     QUrl getUrl(const int& index);
     QString getName(const int& index);
 
+    void getQmlValue(const QString& qmlValue);
+    void resetQmlModel();
+
 
 signals:
 private:
     QList<AudioFile*> mAudioList;
     QString audioFolderPath = "C:/Users/ADMIN/Desktop/MusicApp/MusicApp/music";
-    // C:/Users/ADMIN/Desktop/lamle/MusicApp/MusicApp/music
-//    QList<AudioFile*> mTempList;
-//    QList<AudioFile*> mFindedList;
+    QString qmlValue;
+    QList<AudioFile*> mFoundList;
 };
 
 #endif // FOLDERLISTMODEL_H

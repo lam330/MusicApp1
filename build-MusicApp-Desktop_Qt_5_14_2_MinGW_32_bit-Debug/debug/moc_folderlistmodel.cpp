@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FolderListModel_t {
-    QByteArrayData data[13];
-    char stringdata0[103];
+    QByteArrayData data[16];
+    char stringdata0[138];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,12 +44,16 @@ QT_MOC_LITERAL(8, 61, 5), // "index"
 QT_MOC_LITERAL(9, 67, 14), // "removeLastFile"
 QT_MOC_LITERAL(10, 82, 5), // "count"
 QT_MOC_LITERAL(11, 88, 6), // "getUrl"
-QT_MOC_LITERAL(12, 95, 7) // "getName"
+QT_MOC_LITERAL(12, 95, 7), // "getName"
+QT_MOC_LITERAL(13, 103, 11), // "getQmlValue"
+QT_MOC_LITERAL(14, 115, 8), // "qmlValue"
+QT_MOC_LITERAL(15, 124, 13) // "resetQmlModel"
 
     },
     "FolderListModel\0addFile\0\0AudioFile*\0"
     "file\0url\0name\0removeFile\0index\0"
-    "removeLastFile\0count\0getUrl\0getName"
+    "removeLastFile\0count\0getUrl\0getName\0"
+    "getQmlValue\0qmlValue\0resetQmlModel"
 };
 #undef QT_MOC_LITERAL
 
@@ -59,7 +63,7 @@ static const uint qt_meta_data_FolderListModel[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,15 +71,17 @@ static const uint qt_meta_data_FolderListModel[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   59,    2, 0x0a /* Public */,
-       1,    1,   60,    2, 0x0a /* Public */,
-       1,    1,   63,    2, 0x0a /* Public */,
-       1,    2,   66,    2, 0x0a /* Public */,
-       7,    1,   71,    2, 0x0a /* Public */,
-       9,    0,   74,    2, 0x0a /* Public */,
-      10,    0,   75,    2, 0x0a /* Public */,
-      11,    1,   76,    2, 0x0a /* Public */,
-      12,    1,   79,    2, 0x0a /* Public */,
+       1,    0,   69,    2, 0x0a /* Public */,
+       1,    1,   70,    2, 0x0a /* Public */,
+       1,    1,   73,    2, 0x0a /* Public */,
+       1,    2,   76,    2, 0x0a /* Public */,
+       7,    1,   81,    2, 0x0a /* Public */,
+       9,    0,   84,    2, 0x0a /* Public */,
+      10,    0,   85,    2, 0x0a /* Public */,
+      11,    1,   86,    2, 0x0a /* Public */,
+      12,    1,   89,    2, 0x0a /* Public */,
+      13,    1,   92,    2, 0x0a /* Public */,
+      15,    0,   95,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -87,6 +93,8 @@ static const uint qt_meta_data_FolderListModel[] = {
     QMetaType::Int,
     QMetaType::QUrl, QMetaType::Int,    8,
     QMetaType::QString, QMetaType::Int,    8,
+    QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -109,6 +117,8 @@ void FolderListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
             if (_a[0]) *reinterpret_cast< QUrl*>(_a[0]) = std::move(_r); }  break;
         case 8: { QString _r = _t->getName((*reinterpret_cast< const int(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
+        case 9: _t->getQmlValue((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 10: _t->resetQmlModel(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -154,13 +164,13 @@ int FolderListModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 11;
     }
     return _id;
 }

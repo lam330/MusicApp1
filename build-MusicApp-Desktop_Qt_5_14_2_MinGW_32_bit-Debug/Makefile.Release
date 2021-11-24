@@ -306,13 +306,13 @@ release/moc_folderlistmodel.cpp: ../MusicApp/folderlistmodel.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qfileinfo.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qfile.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QDebug \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QFileInfo \
 		../MusicApp/audiofile.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QUrl \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qurl.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qurlquery.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QString \
-		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QFileInfo \
-		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QDebug \
 		release/moc_predefs.h \
 		C:/QtNew/5.14.2/mingw73_32/bin/moc.exe
 	C:\QtNew\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/ADMIN/Desktop/MusicApp/build-MusicApp-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/release/moc_predefs.h -IC:/QtNew/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/ADMIN/Desktop/MusicApp/MusicApp -IC:/QtNew/5.14.2/mingw73_32/include -IC:/QtNew/5.14.2/mingw73_32/include/QtQuick -IC:/QtNew/5.14.2/mingw73_32/include/QtGui -IC:/QtNew/5.14.2/mingw73_32/include/QtANGLE -IC:/QtNew/5.14.2/mingw73_32/include/QtQmlModels -IC:/QtNew/5.14.2/mingw73_32/include/QtQml -IC:/QtNew/5.14.2/mingw73_32/include/QtNetwork -IC:/QtNew/5.14.2/mingw73_32/include/QtCore -I. -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/QtNew/Tools/mingw730_32/i686-w64-mingw32/include ..\MusicApp\folderlistmodel.h -o release\moc_folderlistmodel.cpp
@@ -483,13 +483,13 @@ release/folderlistmodel.o: ../MusicApp/folderlistmodel.cpp ../MusicApp/folderlis
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qfileinfo.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qfile.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QDebug \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QFileInfo \
 		../MusicApp/audiofile.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QUrl \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qurl.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qurlquery.h \
-		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QString \
-		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QFileInfo \
-		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QDebug
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\folderlistmodel.o ..\MusicApp\folderlistmodel.cpp
 
 release/main.o: ../MusicApp/main.cpp C:/QtNew/5.14.2/mingw73_32/include/QtGui/QGuiApplication \
@@ -586,7 +586,23 @@ release/main.o: ../MusicApp/main.cpp C:/QtNew/5.14.2/mingw73_32/include/QtGui/QG
 		C:/QtNew/5.14.2/mingw73_32/include/QtQml/qqmlpropertyvaluesource.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtQml/qqmllist.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qmetaobject.h \
-		C:/QtNew/5.14.2/mingw73_32/include/QtQml/qqmlerror.h
+		C:/QtNew/5.14.2/mingw73_32/include/QtQml/qqmlerror.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtQml/QQmlContext \
+		C:/QtNew/5.14.2/mingw73_32/include/QtQml/qqmlcontext.h \
+		../MusicApp/folderlistmodel.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QAbstractListModel \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qabstractitemmodel.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QObject \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QDir \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qdir.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qfileinfo.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qfile.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qfiledevice.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QDebug \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QFileInfo \
+		../MusicApp/audiofile.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QUrl \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\MusicApp\main.cpp
 
 release/qrc_qml.o: release/qrc_qml.cpp 

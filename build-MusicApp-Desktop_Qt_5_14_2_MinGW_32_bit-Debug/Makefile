@@ -224,6 +224,7 @@ Makefile: ../MusicApp/MusicApp.pro C:/QtNew/5.14.2/mingw73_32/mkspecs/win32-g++/
 		C:/QtNew/5.14.2/mingw73_32/mkspecs/features/qt_config.prf \
 		C:/QtNew/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf \
 		C:/QtNew/5.14.2/mingw73_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		C:/QtNew/5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf \
 		C:/QtNew/5.14.2/mingw73_32/mkspecs/features/toolchain.prf \
 		C:/QtNew/5.14.2/mingw73_32/mkspecs/features/default_pre.prf \
@@ -254,7 +255,6 @@ Makefile: ../MusicApp/MusicApp.pro C:/QtNew/5.14.2/mingw73_32/mkspecs/win32-g++/
 		C:/QtNew/5.14.2/mingw73_32/lib/Qt5Network.prl \
 		C:/QtNew/5.14.2/mingw73_32/lib/Qt5Core.prl \
 		C:/QtNew/5.14.2/mingw73_32/lib/qtmain.prl \
-		.qmake.stash \
 		C:/QtNew/5.14.2/mingw73_32/mkspecs/features/build_pass.prf \
 		../MusicApp/qml.qrc \
 		../MusicApp/Images.qrc
@@ -413,6 +413,7 @@ C:/QtNew/5.14.2/mingw73_32/mkspecs/features/qt_functions.prf:
 C:/QtNew/5.14.2/mingw73_32/mkspecs/features/qt_config.prf:
 C:/QtNew/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf:
 C:/QtNew/5.14.2/mingw73_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 C:/QtNew/5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf:
 C:/QtNew/5.14.2/mingw73_32/mkspecs/features/toolchain.prf:
 C:/QtNew/5.14.2/mingw73_32/mkspecs/features/default_pre.prf:
@@ -443,7 +444,6 @@ C:/QtNew/5.14.2/mingw73_32/lib/Qt5Qml.prl:
 C:/QtNew/5.14.2/mingw73_32/lib/Qt5Network.prl:
 C:/QtNew/5.14.2/mingw73_32/lib/Qt5Core.prl:
 C:/QtNew/5.14.2/mingw73_32/lib/qtmain.prl:
-.qmake.stash:
 C:/QtNew/5.14.2/mingw73_32/mkspecs/features/build_pass.prf:
 ../MusicApp/qml.qrc:
 ../MusicApp/Images.qrc:

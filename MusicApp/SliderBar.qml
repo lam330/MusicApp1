@@ -83,7 +83,7 @@ Image {
             }
             states: State {
                 name: "pressed"
-                when: mouseArea.pressed
+                when: dragArea.pressed
                 PropertyChanges { target: trackSeeker; scale: 1.2 }
             }
             transitions: Transition {

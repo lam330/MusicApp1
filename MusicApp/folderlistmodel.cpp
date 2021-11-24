@@ -3,7 +3,7 @@
 FolderListModel::FolderListModel(QObject *parent) : QAbstractListModel(parent)
 {
     //Load default list
-    loadData(audioFolderPath);
+    loadData();
 }
 
 //FolderListModel::FolderListModel()
@@ -16,11 +16,9 @@ FolderListModel::~FolderListModel()
 
 }
 
-void FolderListModel::loadData(const QString &path)
+void FolderListModel::loadData()
 {
-    QDir dirObj(path);
-
-
+    QDir dirObj(audioFolderPath);
     for(const QFileInfo var : dirObj.entryList(QDir::AllDirs | QDir::Files |QDir::NoDotAndDotDot))
     {
         AudioFile *file = new AudioFile(AudioFile::convertToUrl(var.filePath()), var.fileName());
@@ -29,15 +27,44 @@ void FolderListModel::loadData(const QString &path)
     }
 }
 
+void FolderListModel::loadFoundListData()
+{
+    //clear data
+    mFoundList.clear();
+    //load
+    QDir dirObj(audioFolderPath);
+    for(const QFileInfo var : dirObj.entryList(QDir::AllDirs | QDir::Files |QDir::NoDotAndDotDot))
+    {
+        AudioFile *file = new AudioFile(AudioFile::convertToUrl(var.filePath()), var.fileName());
+        if(var.fileName().contains(qmlValue)) {
+            mFoundList.append(file);
+        }
+
+    }
+}
+
 int FolderListModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return mAudioList.size();
+    if(!qmlValue.isEmpty()) {
+        return mFoundList.size();
+    } else {
+        return mAudioList.size();
+    }
 }
 
 QVariant FolderListModel::data(const QModelIndex &index, int role) const
 {
     //Check the bounds
+    qDebug() << "mAudioList: " <<mAudioList.count();
+    qDebug() << "mFoundList: " <<mFoundList.count();
+
+    if(!qmlValue.isEmpty()) {
+        if(index.row() < 0 || index.row() > mFoundList.count()) {
+            return QVariant();
+        }
+    }
+
     if (index.row() < 0 || index.row() >= mAudioList.count()) {
         return QVariant();
     }
@@ -45,10 +72,17 @@ QVariant FolderListModel::data(const QModelIndex &index, int role) const
     //Valid index
     AudioFile *file = mAudioList.at(index.row());
 
+
     switch (role) {
     case UrlRole:
+        if(!qmlValue.isEmpty()) {
+            return mFoundList.at(index.row())->url();
+        }
         return file->url();
     case NameRole:
+        if(!qmlValue.isEmpty()) {
+            return mFoundList.at(index.row())->name();
+        }
         return file->name();
     default:
         return QVariant();
@@ -121,17 +155,13 @@ void FolderListModel::addFile(QUrl url)
 
 void FolderListModel::addFile()
 {
-    //AudioFile *file = new AudioFile(url, mame)
-    //addFile(file)
+
 }
 
 void FolderListModel::addFile(const QUrl &url, const QString &name)
-{
-    const int index = mAudioList.size();
-    beginInsertRows(QModelIndex(),index,index);
+{ 
     AudioFile *file = new AudioFile(url, name);
     addFile(file);
-    endInsertRows();
 }
 
 void FolderListModel::removeFile(const int &index)
@@ -166,4 +196,20 @@ QString FolderListModel::getName(const int &index)
         return QString();
     }
     return mAudioList.at(index)->name();
+}
+
+void FolderListModel::getQmlValue(const QString &textFieldInput)
+{
+    qmlValue = textFieldInput;
+    qDebug() << "qmlValue: " << qmlValue;
+}
+
+void FolderListModel::resetQmlModel()
+{
+    beginResetModel();
+    //Reload data to mFindedList
+    if(!qmlValue.isEmpty()) {
+        loadFoundListData();
+    }
+    endResetModel();
 }
