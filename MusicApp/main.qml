@@ -15,27 +15,16 @@ ApplicationWindow {
     title: "Music app"
 
     //Connections for image + timer
-//    Connections {
-//        target: CppSignalSender
+    Connections {
+        target: CppSignalSender
 
-//        onCppTimer: {
-//            //console.log("onCppTimer")
-//            mainImage.source = imageModel.getImageUrl()
-//        }
-//    }
+        onCppTimer: {
+            //console.log("onCppTimer")
+            mainImage.source = CppSignalSender.getImageUrl()
+        }
+    }
 
-//    ImageModel {
-//        id: imageModel
-//    }
 
-//    DynamicEntryModel {
-//        id: dynamic
-//        onCountChanged: {
-//            // we print out count and the last entry when count is changing
-//            print('new count: ' + count);
-//            print('last entry: ' + get(count-1));
-//        }
-//    }
 
     Image {
         id: background
@@ -215,7 +204,7 @@ ApplicationWindow {
 
     Image {
         id: mainImage
-        source: imageModel.getImageUrl()
+        source: CppSignalSender.getImageUrl()
         anchors.bottom: foreground.top
         anchors.horizontalCenter: parent.horizontalCenter
         height: mainWindow.height - foreground.height

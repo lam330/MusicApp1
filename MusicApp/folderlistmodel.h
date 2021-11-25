@@ -53,6 +53,7 @@ signals:
 private:
     QList<AudioFile*> mAudioList;
     QString audioFolderPath = "C:/Users/ADMIN/Desktop/MusicApp/MusicApp/music";
+
     QString qmlValue;
     QList<AudioFile*> mFoundList;
 };

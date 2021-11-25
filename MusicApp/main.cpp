@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include "folderlistmodel.h"
+#include "cppsignalsender.h"
 
 
 int main(int argc, char *argv[])
@@ -14,9 +15,11 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
-    FolderListModel myAudioFolder;
+    FolderListModel myAudioFolderModel;
+    CppSignalSender sender;
 
-    engine.rootContext()->setContextProperty("myAudioModel", &myAudioFolder);
+    engine.rootContext()->setContextProperty("myAudioModel", &myAudioFolderModel);
+    engine.rootContext()->setContextProperty("CppSignalSender", &sender);
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

@@ -8,6 +8,7 @@ CONFIG += c++11
 
 SOURCES += \
         audiofile.cpp \
+        cppsignalsender.cpp \
         folderlistmodel.cpp \
         main.cpp
 
@@ -27,4 +28,18 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     audiofile.h \
+    cppsignalsender.h \
     folderlistmodel.h
+
+DISTFILES += \
+    images/Classic.jpeg \
+    images/pexels-barthy-bonhomme-185030.jpg \
+    images/pexels-breakingpic-3104.jpg \
+    images/pexels-foteros-352505.jpg \
+    images/pexels-freestocksorg-14548.jpg \
+    images/pexels-jessica-lynn-lewis-1010519.jpg \
+    images/pexels-kaboompics-com-6320.jpg \
+    images/pexels-pixabay-159376.jpg \
+    images/pexels-pixabay-248510.jpg \
+    images/pexels-snapwire-6966.jpg \
+    images/pexels-stephen-niemeier-63703.jpg

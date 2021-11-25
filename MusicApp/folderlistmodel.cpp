@@ -19,10 +19,11 @@ FolderListModel::~FolderListModel()
 void FolderListModel::loadData()
 {
     QDir dirObj(audioFolderPath);
-    for(const QFileInfo var : dirObj.entryList(QDir::AllDirs | QDir::Files |QDir::NoDotAndDotDot))
+    for(const QFileInfo &var : dirObj.entryList(QDir::AllDirs | QDir::Files |QDir::NoDotAndDotDot))
     {
         AudioFile *file = new AudioFile(AudioFile::convertToUrl(var.filePath()), var.fileName());
-        qDebug() << "fileName: " << var.fileName();
+        qDebug() << "audio fiePath: " << var.filePath();
+        qDebug() << "audio file Url" << AudioFile::convertToUrl(var.fileName());
         addFile(file);
     }
 }
@@ -31,15 +32,13 @@ void FolderListModel::loadFoundListData()
 {
     //clear data
     mFoundList.clear();
-    //load
-    QDir dirObj(audioFolderPath);
-    for(const QFileInfo var : dirObj.entryList(QDir::AllDirs | QDir::Files |QDir::NoDotAndDotDot))
+    //loop in list after adding
+    for(int i = 0; i < mAudioList.size(); i++)
     {
-        AudioFile *file = new AudioFile(AudioFile::convertToUrl(var.filePath()), var.fileName());
-        if(var.fileName().contains(qmlValue)) {
-            mFoundList.append(file);
+        if(mAudioList.at(i)->name().contains(qmlValue)) {
+            mFoundList.append(mAudioList.at(i));
+            qDebug() << "size of mFound: " << mFoundList.size();
         }
-
     }
 }
 

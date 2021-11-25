@@ -12,7 +12,6 @@ class AudioFile : public QObject
     Q_OBJECT
 public:
     explicit AudioFile(QObject *parent = nullptr);
-    AudioFile(const QString &name);
     AudioFile(const QUrl &url, const QString &name);
     virtual ~AudioFile();
 
@@ -22,7 +21,7 @@ public:
     const QString &name() const;
     void setName(const QString &fileName);
 
-    static QUrl convertToUrl(const QFileInfo &var);
+    static QUrl convertToUrl(const QString &filePath);
 
 signals:
 
