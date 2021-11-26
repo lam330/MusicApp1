@@ -31,9 +31,9 @@ void AudioFile::setName(const QString &fileName)
     m_name = fileName;
 }
 
-QUrl AudioFile::convertToUrl(const QString &filePath)
+QUrl AudioFile::convertToUrl(const QString &fileName)
 {
-    QUrl url = QUrl(filePath);
+    QUrl url = QUrl(fileName);
     QUrl baseUrl = QUrl("file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/music/");
     return baseUrl.resolved(url);
 }

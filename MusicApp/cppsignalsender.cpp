@@ -32,9 +32,9 @@ void CppSignalSender::loadData()
     qDebug() << "size image list: " << mImageUrls.size();
 }
 
-QUrl CppSignalSender::convertToUrl(const QString &filePath)
+QUrl CppSignalSender::convertToUrl(const QString &fileName)
 {
-    QUrl url = QUrl(filePath);
+    QUrl url = QUrl(fileName);
     QUrl baseUrl = QUrl("file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/images/");
     return baseUrl.resolved(url);
 }

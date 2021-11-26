@@ -21,7 +21,7 @@ public:
     const QString &name() const;
     void setName(const QString &fileName);
 
-    static QUrl convertToUrl(const QString &filePath);
+    static QUrl convertToUrl(const QString &fileName);
 
 signals:
 

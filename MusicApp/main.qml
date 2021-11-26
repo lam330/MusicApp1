@@ -81,6 +81,11 @@ ApplicationWindow {
                 myAudioModel.getQmlValue(textFieldId.text)
                 //Reset model
                 myAudioModel.resetQmlModel()
+                //update url in listSongId
+                //listSongId.model = myAudioModel
+                //dut binding
+                //trackTitle.text = myAudioModel.getName(listSongId.currentIndex)
+
 
 
 //                dynamic.resetQmlModel()
@@ -159,7 +164,6 @@ ApplicationWindow {
             //add list from dialog
             for( var i = 0; i < fileUrls.length; i++) {
                 console.log("File " + i + " is: " + fileUrls[i] )
-                //dynamic.append(fileUrl[i])
                 myAudioModel.addFile(fileUrls[i])
             }
         }
@@ -225,14 +229,10 @@ ApplicationWindow {
 
         property int index: -1
         property MediaPlayer mediaPlayer: player
-        //property DynamicEntryModel items: dynamic
-        //property Folder name: value
 
         function init(){
-            //listSongId.currentIndex = 0
             if(mediaPlayer.playbackState===1){
                 mediaPlayer.pause();
-
             }else if(mediaPlayer.playbackState===2){
                 mediaPlayer.play();
             }else{
@@ -245,11 +245,14 @@ ApplicationWindow {
             console.log("current i in setIndex: " + i)
             index = i;
 
+            //set title
+            trackTitle.text = myAudioModel.getName(index)
+
             if (index < 0)
             {
-                listSongId.currentIndex = myAudioModel.count() - 1
+                //listSongId.currentIndex = myAudioModel.count() - 1
             } else if (index > myAudioModel.count()) {
-                listSongId.currentIndex = 0
+                //listSongId.currentIndex = 0
             }else{
                 mediaPlayer.source = myAudioModel.getUrl(index)
                 console.log(mediaPlayer.source)

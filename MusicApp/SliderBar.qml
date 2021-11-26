@@ -17,6 +17,7 @@ Image {
     MouseArea {
         anchors.fill: parent
         onClicked: {
+            console.log("MouseArea clicked in barSlider")
             if (audioPlayer.seekable)
                 audioPlayer.seek(audioPlayer.duration * mouse.x/width);
         }
@@ -73,9 +74,13 @@ Image {
                 drag.target: parent
                 drag.axis: Drag.XAxis
                 drag.minimumX: -10
-                drag.maximumX: parent.parent.width-20
-                onPressed: trackSeeker.state = "pressed"
+                drag.maximumX: parent.parent.width
+                onPressed: {
+                    console.log("onPressed in dragArea")
+                    trackSeeker.state = "pressed"
+                }
                 onReleased: {
+                    console.log("onReleased in dragArea")
                     trackSeeker.state = "none"
                     if (audioPlayer.seekable)
                         audioPlayer.seek(audioPlayer.duration * trackSeeker.x/(parent.parent.width-10));
@@ -87,6 +92,7 @@ Image {
                 PropertyChanges { target: trackSeeker; scale: 1.2 }
             }
             transitions: Transition {
+
                 NumberAnimation { properties: "scale"; duration: 100; easing.type: Easing.InOutQuad }
             }
         }

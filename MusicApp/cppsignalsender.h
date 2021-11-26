@@ -14,7 +14,7 @@ class CppSignalSender : public QObject
 public:
     explicit CppSignalSender(QObject *parent = nullptr);
     void loadData();
-    QUrl convertToUrl(const QString &filePath);
+    QUrl convertToUrl(const QString &fileName);
 
 public slots:
     QUrl getImageUrl();

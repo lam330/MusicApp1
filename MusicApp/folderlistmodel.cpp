@@ -21,9 +21,9 @@ void FolderListModel::loadData()
     QDir dirObj(audioFolderPath);
     for(const QFileInfo &var : dirObj.entryList(QDir::AllDirs | QDir::Files |QDir::NoDotAndDotDot))
     {
-        AudioFile *file = new AudioFile(AudioFile::convertToUrl(var.filePath()), var.fileName());
-        qDebug() << "audio fiePath: " << var.filePath();
-        qDebug() << "audio file Url" << AudioFile::convertToUrl(var.fileName());
+        AudioFile *file = new AudioFile(AudioFile::convertToUrl(var.fileName()), var.fileName());
+        //qDebug() << "audio fiePath: " << var.filePath();
+        //qDebug() << "audio file Url" << AudioFile::convertToUrl(var.fileName());
         addFile(file);
     }
 }
@@ -148,6 +148,7 @@ void FolderListModel::addFile(QUrl url)
     //Split from url => name
     qDebug() << "url => name: " << url.toEncoded().split('/').at(11);
     QString splitedName = url.toEncoded().split('/').at(11);
+    qDebug() << "url after encode: " << url;
     addFile(url, splitedName);
 
 }
@@ -183,14 +184,23 @@ int FolderListModel::count() const
 
 QUrl FolderListModel::getUrl(const int &index)
 {
+    if(!qmlValue.isEmpty()) {
+        return mFoundList.at(index)->url();
+    }
+
     if(index < 0 || index >= mAudioList.count()) {
         return QUrl();
     }
+
     return mAudioList.at(index)->url();
 }
 
 QString FolderListModel::getName(const int &index)
 {
+    if(!qmlValue.isEmpty()) {
+        return mFoundList.at(index)->name();
+    }
+
     if(index < 0 || index >= mAudioList.count()) {
         return QString();
     }
