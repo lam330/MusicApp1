@@ -28,7 +28,7 @@ ApplicationWindow {
 
     Image {
         id: background
-        source: "gfx/background.png"
+        //source: "gfx/background.png"
         anchors.fill: parent
     }
 
@@ -81,15 +81,6 @@ ApplicationWindow {
                 myAudioModel.getQmlValue(textFieldId.text)
                 //Reset model
                 myAudioModel.resetQmlModel()
-                //update url in listSongId
-                //listSongId.model = myAudioModel
-                //dut binding
-                //trackTitle.text = myAudioModel.getName(listSongId.currentIndex)
-
-
-
-//                dynamic.resetQmlModel()
-//                listSongId.model = dynamic
 
             }
         }
