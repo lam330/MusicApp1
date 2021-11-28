@@ -146,8 +146,8 @@ ApplicationWindow {
         title: "Choose files"
         selectFolder: false //false => choose file, true => choose folder
         selectMultiple: true
-        folder: "file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/addedFile"
-        //folder: myAudioModel.getLocationForDialog()
+        //folder: "file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/addedFile"
+        folder: myAudioModel.getLocationForDialog()
         onAccepted: {
             //add list from dialog
             for( var i = 0; i < fileUrls.length; i++) {
@@ -156,7 +156,7 @@ ApplicationWindow {
             }
         }
         onRejected: {
-
+            console.log("User haven't chosen yet!!")
         }
     }
 

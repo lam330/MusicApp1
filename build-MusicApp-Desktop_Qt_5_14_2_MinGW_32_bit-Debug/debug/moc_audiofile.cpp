@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../MusicApp/audiofile.h"
+#include "E:/temp_new/C++/Qt_FPT/finalMusicApp/MusicApp/audiofile.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

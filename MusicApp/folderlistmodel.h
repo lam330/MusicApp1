@@ -48,7 +48,7 @@ public slots:
     void getQmlValue(const QString& qmlValue);
     void resetQmlModel();
 
-    QString getLocationForDialog();
+    QUrl getLocationForDialog();
 
 
 signals:

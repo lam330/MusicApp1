@@ -38,10 +38,19 @@ void CppSignalSender::loadData()
 
 QUrl CppSignalSender::convertToUrl(const QString &fileName)
 {
+
+    //get folder Url
+    QFileInfo fileInfo(QDir::currentPath());
+    QString rootUrl = fileInfo.absolutePath();
+    qDebug() << "rootUrl in convert: " << rootUrl; //C:/Users/ADMIN/Desktop/MusicApp
+
+    QString folderUrl = "file:///" + rootUrl + "/MusicApp/imagesForSlide/";
     QUrl url = QUrl(fileName);
-    QUrl baseUrl = QUrl("file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/imagesForSlide/");
-    //QUrl baseUrl = QUrl("qrc:/imagesForSlide/");
-    return baseUrl.resolved(url);
+
+    QUrl baseUrl = QUrl(folderUrl);
+    qDebug() << "Image finalUrl: " << baseUrl.resolved(url).toString();
+    return baseUrl.resolved(url);// "file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/music/"
+
 }
 
 QUrl CppSignalSender::getImageUrl()

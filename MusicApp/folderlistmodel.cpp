@@ -237,12 +237,12 @@ void FolderListModel::resetQmlModel()
     endResetModel();
 }
 
-QString FolderListModel::getLocationForDialog()
+QUrl FolderListModel::getLocationForDialog()
 {
     qDebug() << "getLocationForDialog";
     QFileInfo fileInfo(QDir::currentPath());
     QString rootUrl = fileInfo.absolutePath();
-    QString addedFilePath = rootUrl + "/MusicApp/addedFile";
+    QString addedFilePath = "file:///" + rootUrl + "/MusicApp/addedFile";
     qDebug() << "addedFilePath: " << addedFilePath;
     return addedFilePath;
 }

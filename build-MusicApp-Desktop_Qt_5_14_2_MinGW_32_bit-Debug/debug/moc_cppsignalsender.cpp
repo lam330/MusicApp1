@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../MusicApp/cppsignalsender.h"
+#include "E:/temp_new/C++/Qt_FPT/finalMusicApp/MusicApp/cppsignalsender.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)

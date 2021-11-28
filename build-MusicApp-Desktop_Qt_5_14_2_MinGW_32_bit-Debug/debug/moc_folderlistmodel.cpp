@@ -7,7 +7,7 @@
 *****************************************************************************/
 
 #include <memory>
-#include "../../MusicApp/folderlistmodel.h"
+#include "E:/temp_new/C++/Qt_FPT/finalMusicApp/MusicApp/folderlistmodel.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -98,7 +98,7 @@ static const uint qt_meta_data_FolderListModel[] = {
     QMetaType::QString, QMetaType::Int,    8,
     QMetaType::Void, QMetaType::QString,   14,
     QMetaType::Void,
-    QMetaType::QString,
+    QMetaType::QUrl,
 
        0        // eod
 };
@@ -123,8 +123,8 @@ void FolderListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         case 9: _t->getQmlValue((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 10: _t->resetQmlModel(); break;
-        case 11: { QString _r = _t->getLocationForDialog();
-            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
+        case 11: { QUrl _r = _t->getLocationForDialog();
+            if (_a[0]) *reinterpret_cast< QUrl*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {

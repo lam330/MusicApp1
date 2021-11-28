@@ -245,6 +245,8 @@ debug/moc_audiofile.cpp: ../MusicApp/audiofile.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qcontiguouscache.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qsharedpointer.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qsharedpointer_impl.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QDir \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qdir.h \
 		debug/moc_predefs.h \
 		C:/QtNew/5.14.2/mingw73_32/bin/moc.exe
 	C:\QtNew\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/Users/ADMIN/Desktop/MusicApp/build-MusicApp-Desktop_Qt_5_14_2_MinGW_32_bit-Debug/debug/moc_predefs.h -IC:/QtNew/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/Users/ADMIN/Desktop/MusicApp/MusicApp -IC:/QtNew/5.14.2/mingw73_32/include -IC:/QtNew/5.14.2/mingw73_32/include/QtQuick -IC:/QtNew/5.14.2/mingw73_32/include/QtGui -IC:/QtNew/5.14.2/mingw73_32/include/QtANGLE -IC:/QtNew/5.14.2/mingw73_32/include/QtQmlModels -IC:/QtNew/5.14.2/mingw73_32/include/QtQml -IC:/QtNew/5.14.2/mingw73_32/include/QtNetwork -IC:/QtNew/5.14.2/mingw73_32/include/QtCore -I. -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/QtNew/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/QtNew/Tools/mingw730_32/i686-w64-mingw32/include ..\MusicApp\audiofile.h -o debug\moc_audiofile.cpp
@@ -506,7 +508,9 @@ debug/audiofile.o: ../MusicApp/audiofile.cpp ../MusicApp/audiofile.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qset.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qcontiguouscache.h \
 		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qsharedpointer.h \
-		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qsharedpointer_impl.h
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qsharedpointer_impl.h \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/QDir \
+		C:/QtNew/5.14.2/mingw73_32/include/QtCore/qdir.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\audiofile.o ..\MusicApp\audiofile.cpp
 
 debug/cppsignalsender.o: ../MusicApp/cppsignalsender.cpp ../MusicApp/cppsignalsender.h \
