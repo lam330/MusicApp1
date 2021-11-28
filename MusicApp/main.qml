@@ -28,7 +28,7 @@ ApplicationWindow {
 
     Image {
         id: background
-        //source: "gfx/background.png"
+        source: "gfx/background.png"
         anchors.fill: parent
     }
 
@@ -143,15 +143,12 @@ ApplicationWindow {
 
     FileDialog {
         id  : fileDialogId
-        title: "Choose file or folder"
+        title: "Choose files"
         selectFolder: false //false => choose file, true => choose folder
         selectMultiple: true
-        folder: "file:///C:/Users/ADMIN/Desktop/lamle/MusicApp/MusicApp/addedFile"
-
-
+        folder: "file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/addedFile"
+        //folder: myAudioModel.getLocationForDialog()
         onAccepted: {
-            //textId.text = fileUrls[0] //QUrl
-
             //add list from dialog
             for( var i = 0; i < fileUrls.length; i++) {
                 console.log("File " + i + " is: " + fileUrls[i] )
@@ -162,13 +159,6 @@ ApplicationWindow {
 
         }
     }
-
-//    Text {
-//        id: textId
-//        anchors.top: addButton.bottom
-//        text: "User hasn't choosen yet"
-//        wrapMode: Text.Wrap
-//    }
 
     //Button fileDialog
     RowLayout {
@@ -182,6 +172,7 @@ ApplicationWindow {
             text: "Add"
             onClicked: {
                 fileDialogId.open()
+                //myAudioModel.getLocationForDialog()
             }
         }
         Button {

@@ -33,9 +33,18 @@ void AudioFile::setName(const QString &fileName)
 
 QUrl AudioFile::convertToUrl(const QString &fileName)
 {
+    //get folder Url
+
+    QFileInfo fileInfo(QDir::currentPath());
+    QString rootUrl = fileInfo.absolutePath();
+    qDebug() << "rootUrl in convert: " << rootUrl; //C:/Users/ADMIN/Desktop/MusicApp
+
+    QString folderUrl = "file:///" + rootUrl + "/MusicApp/music/";
     QUrl url = QUrl(fileName);
-    QUrl baseUrl = QUrl("file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/music/");
-    return baseUrl.resolved(url);
+
+    QUrl baseUrl = QUrl(folderUrl);
+    qDebug() << "finalUrl: " << baseUrl.resolved(url).toString();
+    return baseUrl.resolved(url);// "file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/music/"
 }
 
 

@@ -18,14 +18,25 @@ FolderListModel::~FolderListModel()
 
 void FolderListModel::loadData()
 {
-    QDir dirObj(audioFolderPath);
-    for(const QFileInfo &var : dirObj.entryList(QDir::AllDirs | QDir::Files |QDir::NoDotAndDotDot))
+
+    //get folder Url
+    QFileInfo fileInfo(QDir::currentPath());
+    QString rootUrl = fileInfo.absolutePath();
+    QString audioFolderPath = rootUrl + "/" + audioFolderName;
+    QDir dirObj (audioFolderPath);
+
+    for(const QFileInfo &var : dirObj.entryInfoList(QDir::AllDirs | QDir::Files |QDir::NoDotAndDotDot))
     {
-        AudioFile *file = new AudioFile(AudioFile::convertToUrl(var.fileName()), var.fileName());
-        //qDebug() << "audio fiePath: " << var.filePath();
-        //qDebug() << "audio file Url" << AudioFile::convertToUrl(var.fileName());
+        qDebug() << "audio fileName: " << var.fileName();
+        QString audioName = var.fileName();
+        qDebug() << "audio url: " << AudioFile::convertToUrl(var.fileName());
+        QUrl audioUrl = AudioFile::convertToUrl(var.fileName());
+
+        AudioFile *file = new AudioFile(audioUrl, audioName);
         addFile(file);
     }
+
+    qDebug() << "size image list: " << mAudioList.size();
 }
 
 void FolderListModel::loadFoundListData()
@@ -146,8 +157,11 @@ void FolderListModel::addFile(AudioFile *file)
 void FolderListModel::addFile(QUrl url)
 {
     //Split from url => name
-    qDebug() << "url => name: " << url.toEncoded().split('/').at(11);
-    QString splitedName = url.toEncoded().split('/').at(11);
+    qDebug() << url;
+    //QUrl("file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/addedFile/Buc-Thu-Tinh-Thu-Hai-Ho-Quynh-Huong.mp3")
+    qDebug() << "url => name: " << url.toEncoded().split('/').at(10);
+    QString splitedName = url.toEncoded().split('/').at(10);
+
     qDebug() << "url after encode: " << url;
     addFile(url, splitedName);
 
@@ -221,4 +235,14 @@ void FolderListModel::resetQmlModel()
         loadFoundListData();
     }
     endResetModel();
+}
+
+QString FolderListModel::getLocationForDialog()
+{
+    qDebug() << "getLocationForDialog";
+    QFileInfo fileInfo(QDir::currentPath());
+    QString rootUrl = fileInfo.absolutePath();
+    QString addedFilePath = rootUrl + "/MusicApp/addedFile";
+    qDebug() << "addedFilePath: " << addedFilePath;
+    return addedFilePath;
 }

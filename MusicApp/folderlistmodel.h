@@ -48,11 +48,13 @@ public slots:
     void getQmlValue(const QString& qmlValue);
     void resetQmlModel();
 
+    QString getLocationForDialog();
+
 
 signals:
 private:
     QList<AudioFile*> mAudioList;
-    QString audioFolderPath = "C:/Users/ADMIN/Desktop/MusicApp/MusicApp/music";
+    QString audioFolderName = "MusicApp/music";
 
     QString qmlValue;
     QList<AudioFile*> mFoundList;

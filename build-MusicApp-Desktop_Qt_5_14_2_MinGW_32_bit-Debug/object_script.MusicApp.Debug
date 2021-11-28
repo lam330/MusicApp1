@@ -1,0 +1,10 @@
+debug/audiofile.o
+debug/cppsignalsender.o
+debug/folderlistmodel.o
+debug/main.o
+debug/qrc_qml.o
+debug/qrc_Images.o
+debug/qrc_ImagesForSlide.o
+debug/moc_audiofile.o
+debug/moc_cppsignalsender.o
+debug/moc_folderlistmodel.o

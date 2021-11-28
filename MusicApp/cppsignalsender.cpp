@@ -5,9 +5,13 @@ CppSignalSender::CppSignalSender(QObject *parent) : QObject(parent),
     mIndex(0)
 {
     loadData();
-    connect(mTimer, &QTimer::timeout, [=]() {
-        ++mIndex;
-        emit cppTimer(QString::number(mIndex));
+
+    //random
+    srand((unsigned) time(0));
+    connect(mTimer, &QTimer::timeout, [&]() mutable  {
+        mIndex = (rand() % 9) + 1;
+        //qDebug() << "index c++ = " << mIndex;
+        emit cppTimer(mIndex);
     });
 
     mTimer->start(2700);
@@ -17,15 +21,15 @@ CppSignalSender::CppSignalSender(QObject *parent) : QObject(parent),
 
 void CppSignalSender::loadData()
 {
-    qDebug() << "imageFolderPath: " << imageFolderPath;
-    QDir dirObj(imageFolderPath);
+    //get folder Url
+    QFileInfo fileInfo(QDir::currentPath());
+    QString rootUrl = fileInfo.absolutePath();
+    QString imagesFolderPath = rootUrl + "/" + imageFolderName;
+    QDir dirObj (imagesFolderPath);
 
     for(const QFileInfo &var : dirObj.entryInfoList(QDir::AllDirs | QDir::Files |QDir::NoDotAndDotDot))
     {
-        qDebug() << "image fileName: " << var.fileName();
-        //can't use file path => //if relative is not a relative URL, this function will return relative directly
-        QUrl imageFileUrl = convertToUrl(var.fileName());
-        qDebug() << "image url: " << convertToUrl(var.fileName());
+        QUrl imageFileUrl = convertToUrl(var.fileName()); 
         mImageUrls.append(convertToUrl(var.fileName()));
     }
 
@@ -35,11 +39,13 @@ void CppSignalSender::loadData()
 QUrl CppSignalSender::convertToUrl(const QString &fileName)
 {
     QUrl url = QUrl(fileName);
-    QUrl baseUrl = QUrl("file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/images/");
+    QUrl baseUrl = QUrl("file:///C:/Users/ADMIN/Desktop/MusicApp/MusicApp/imagesForSlide/");
+    //QUrl baseUrl = QUrl("qrc:/imagesForSlide/");
     return baseUrl.resolved(url);
 }
 
 QUrl CppSignalSender::getImageUrl()
 {
+    //qDebug() << "ImageUrl: " <<mImageUrls.at(mIndex);
     return mImageUrls.at(mIndex);
 }

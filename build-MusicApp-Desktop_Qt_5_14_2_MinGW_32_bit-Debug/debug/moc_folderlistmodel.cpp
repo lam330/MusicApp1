@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_FolderListModel_t {
-    QByteArrayData data[16];
-    char stringdata0[138];
+    QByteArrayData data[17];
+    char stringdata0[159];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,13 +47,15 @@ QT_MOC_LITERAL(11, 88, 6), // "getUrl"
 QT_MOC_LITERAL(12, 95, 7), // "getName"
 QT_MOC_LITERAL(13, 103, 11), // "getQmlValue"
 QT_MOC_LITERAL(14, 115, 8), // "qmlValue"
-QT_MOC_LITERAL(15, 124, 13) // "resetQmlModel"
+QT_MOC_LITERAL(15, 124, 13), // "resetQmlModel"
+QT_MOC_LITERAL(16, 138, 20) // "getLocationForDialog"
 
     },
     "FolderListModel\0addFile\0\0AudioFile*\0"
     "file\0url\0name\0removeFile\0index\0"
     "removeLastFile\0count\0getUrl\0getName\0"
-    "getQmlValue\0qmlValue\0resetQmlModel"
+    "getQmlValue\0qmlValue\0resetQmlModel\0"
+    "getLocationForDialog"
 };
 #undef QT_MOC_LITERAL
 
@@ -63,7 +65,7 @@ static const uint qt_meta_data_FolderListModel[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,17 +73,18 @@ static const uint qt_meta_data_FolderListModel[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   69,    2, 0x0a /* Public */,
-       1,    1,   70,    2, 0x0a /* Public */,
-       1,    1,   73,    2, 0x0a /* Public */,
-       1,    2,   76,    2, 0x0a /* Public */,
-       7,    1,   81,    2, 0x0a /* Public */,
-       9,    0,   84,    2, 0x0a /* Public */,
-      10,    0,   85,    2, 0x0a /* Public */,
-      11,    1,   86,    2, 0x0a /* Public */,
-      12,    1,   89,    2, 0x0a /* Public */,
-      13,    1,   92,    2, 0x0a /* Public */,
-      15,    0,   95,    2, 0x0a /* Public */,
+       1,    0,   74,    2, 0x0a /* Public */,
+       1,    1,   75,    2, 0x0a /* Public */,
+       1,    1,   78,    2, 0x0a /* Public */,
+       1,    2,   81,    2, 0x0a /* Public */,
+       7,    1,   86,    2, 0x0a /* Public */,
+       9,    0,   89,    2, 0x0a /* Public */,
+      10,    0,   90,    2, 0x0a /* Public */,
+      11,    1,   91,    2, 0x0a /* Public */,
+      12,    1,   94,    2, 0x0a /* Public */,
+      13,    1,   97,    2, 0x0a /* Public */,
+      15,    0,  100,    2, 0x0a /* Public */,
+      16,    0,  101,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -95,6 +98,7 @@ static const uint qt_meta_data_FolderListModel[] = {
     QMetaType::QString, QMetaType::Int,    8,
     QMetaType::Void, QMetaType::QString,   14,
     QMetaType::Void,
+    QMetaType::QString,
 
        0        // eod
 };
@@ -119,6 +123,8 @@ void FolderListModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int 
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         case 9: _t->getQmlValue((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 10: _t->resetQmlModel(); break;
+        case 11: { QString _r = _t->getLocationForDialog();
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -164,13 +170,13 @@ int FolderListModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

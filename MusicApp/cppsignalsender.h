@@ -20,12 +20,12 @@ public slots:
     QUrl getImageUrl();
 
 signals:
-    void cppTimer(QString value);
+    void cppTimer(const int& value);
 
 private:
     QTimer *mTimer;
     int mIndex;
-    QString imageFolderPath = "C:/Users/ADMIN/Desktop/MusicApp/MusicApp/images";
+    QString imageFolderName = "MusicApp/imagesForSlide";
     QList<QUrl> mImageUrls;
 };
 

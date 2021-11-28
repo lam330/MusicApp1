@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>imagesForSlide/Classic.jpeg</file>
+        <file>imagesForSlide/pexels-barthy-bonhomme-185030.jpg</file>
+        <file>imagesForSlide/pexels-breakingpic-3104.jpg</file>
+        <file>imagesForSlide/pexels-foteros-352505.jpg</file>
+        <file>imagesForSlide/pexels-freestocksorg-14548.jpg</file>
+        <file>imagesForSlide/pexels-jessica-lynn-lewis-1010519.jpg</file>
+        <file>imagesForSlide/pexels-kaboompics-com-6320.jpg</file>
+        <file>imagesForSlide/pexels-pixabay-159376.jpg</file>
+        <file>imagesForSlide/pexels-pixabay-248510.jpg</file>
+        <file>imagesForSlide/pexels-snapwire-6966.jpg</file>
+        <file>imagesForSlide/pexels-stephen-niemeier-63703.jpg</file>
+    </qresource>
+</RCC>

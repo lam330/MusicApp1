@@ -17,7 +17,6 @@ int main(int argc, char *argv[])
 
     FolderListModel myAudioFolderModel;
     CppSignalSender sender;
-
     engine.rootContext()->setContextProperty("myAudioModel", &myAudioFolderModel);
     engine.rootContext()->setContextProperty("CppSignalSender", &sender);
 

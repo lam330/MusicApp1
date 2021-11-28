@@ -6,6 +6,7 @@
 #include <QString>
 #include <QFileInfo>
 #include <QDebug>
+#include <QDir>
 
 class AudioFile : public QObject
 {
